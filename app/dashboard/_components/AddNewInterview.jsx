@@ -39,7 +39,7 @@ import { useRouter } from "next/navigation";
       console.log(jobDesc,jobExperience,jobPostion);
 
       const InputPromt="Job position: "+jobPostion+", job description: "+jobDesc+", years of experience: "+jobExperience+" depends on job position, job description & years of experience give us "+ process.env.NEXT_PUBLIC_INTERVIEW_QUESTION_COUNT +" interview questions along with Answered in JSON format. Give only question and answer as field in JSON nothing extra"
-      // console.log(InputPromt);
+      console.log(InputPromt);
 
       const result=await chatSession.sendMessage(InputPromt);
       const MockJsonResp=(result.response.text()).replace('```json','').replace('```','');
